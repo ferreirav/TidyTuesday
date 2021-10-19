@@ -2,7 +2,7 @@
 # R Script for Week 42
 # Data on Global Seafood Production 
 
-# Inspired By:
+# Sourced at: https://github.com/AbdoulMa/TidyTuesday/blob/main/2021_w42/tidytuesday_2021_w42.R
 # Author: Abdoul Madjid
 # October 2021
 
@@ -86,19 +86,82 @@ culture_evolutions <- captured_vs_farmed %>%
 # Graphics----------------------------------------------------------------------
 
 ggplot() +
+  # Circles are added to the graph
   geom_circle(data = culture_evolutions, aes(x0 = Year, y0 = index, r = 0.4995, 
                                              fill = fct_rev(evolution_progress)),
               size = 0.25, color = NA) +
-  # Circles were added to the graph
+  # Here we add the values inside the circles
   geom_text(data = culture_evolutions, aes(x = Year, y = index, 
                                            label = paste0(ifelse(evolution > 0, "+", ""), glue::glue("{round(evolution,1)}%"))), 
             size = 2, color = "white", family = "Times New Roman", fontface = "bold") +
-  # Here we added the values inside the circles
+  # Text is added as a legend over Y axis
   geom_richtext(data = culture_proportions, aes(y = index, label = glue::glue("<span>**{Entity}**</span><br><span style=\"color: grey25;\">**{overall}M Tons**</span>")),
                 hjust = 1,  x = 2003, fill = NA, label.color = NA,
                 lineheight = 0.95,
                 family = "Times New Roman"
                 ) +
-  
-  
-  geom_rect(data = tibble(xmin = 2020, xmax = 2024, ))
+  # Proportions bars are drawn to at he X axis value of 2020
+  geom_rect(data = tibble(xmin = 2020, xmax = 2024, y = 1:15*2), 
+            aes(xmin = xmin, xmax = xmax, ymin = y-0.35, ymax = y+0.35),
+            fill = "#001f3f",
+            alpha = 0.3) +
+  # Proportions are added to the graph
+  geom_rect(data = culture_proportions, 
+            aes(xmin = 2020, xmax = 2020 + aquaculture_prop*4, ymin = index-0.35, ymax = index+0.35),
+            fill = "#001f3f") +
+  # Percentages of the Proportions are added to the graph
+  geom_text(data = culture_proportions, aes(x = 2024.5, y = index, label = glue::glue("{round(aquaculture_prop*100,2)}%")),
+            size = 4,
+            family = "Times New Roman",
+            hjust = 0) +
+  annotate(geom = "segment", x = 2020, xend = 2020, y = 1, yend = 31, size = 0.25) +
+  annotate(geom = "segment", x = 2022, xend = 2022, y = 1, yend = 31, size = 0.125, linetype = "dotted") +
+  annotate(geom = "segment", x = 2024, xend = 2024, y = 1, yend = 31, size = 0.25) +
+  annotate(geom = "text", x = 2022, y = 32.5, label = "Aquaculture\nProportion", size = 4.5, family = "Times New Roman") +
+  annotate(geom = "text", x = 2003, y = 32.5, label = "Countries\nFisheries Production", size = 4.5, hjust = 1, family = "Times New Roman") +
+  annotate(geom = "text", x = 2020, y = 0.5, label = "0%", size = 3,  family = "Times New Roman") +
+  annotate(geom = "text", x = 2022, y = 0.5, label = "50%", size = 3,  family = "Times New Roman") +
+  annotate(geom = "text", x = 2024, y = 0.5, label = "100%", size = 3,  family = "Times New Roman") +
+  annotate(geom = "segment", x = 2004, xend = 2004, y = 1.5 , yend = 0, size = .5) +   
+  annotate(geom = "segment", x = 2018, xend = 2018, y = 1.5 , yend = 0, size = .5) +   
+  annotate(geom= "point", x = 2004, y = 1.5, pch = 21, size = 2, fill = "white") +
+  annotate(geom= "point", x=2018, y = 1.5, pch =21, size = 2, fill = "white") +
+  annotate(geom = "segment", x = 2004, xend = 2004, y = 30.5 , yend = 31.5, size = .5) +   
+  annotate(geom = "segment", x = 2004, xend = 2004.5, y = 31.5 , yend = 31.5, size = .5) +
+  annotate(geom = "text", x = 2004.6, y = 31.5, label = "Change comparatively\nto 2003 production.", hjust = 0, lineheight = .85, family = "Times New Roman", fontface = "bold.italic") + 
+  annotate(geom= "point", x=2004, y = 30.5, pch =21, size = 2, fill = "white") +
+  annotate(geom = "text", x = 2004, y = -.5, label = "2004",family = "Times New Roman") + 
+  annotate(geom = "text", x = 2018, y = -.5, label = "2018", family = "Times New Roman") +
+  labs(
+    title = "How Aquaculture is alleviating pressure on wild fish production?",
+    subtitle = "Annual change in aquaculture (the practice of fish and seafood farming) production\n between 2004 and 2018.",
+    caption = "Data from OurWorldinData.org.\n Tidytuesday Week-42 2021 · Abdoul ISSA BIDA."
+  ) +
+  scale_fill_viridis_d(begin = .15, end = 0.8, direction = -1,
+                       guide =  guide_legend(title = NULL, nrow = 1, 
+                                             reverse = T, 
+                                             label.position = "top", 
+                                             keyheight = unit(15, "mm"),
+                                             keywidth = unit(22.5, "mm"))) +
+coord_equal(clip = "off") + 
+  theme_minimal() + 
+  theme(
+    axis.title = element_blank(), 
+    axis.text = element_blank(),
+    panel.grid  = element_blank(),
+    plot.margin = margin(r = -3.5, unit = "cm"),
+    plot.title = element_text(size = 20, margin = margin(t= 25,b = 15), hjust = .5, family = "Times New Roman"),
+    plot.subtitle = element_text(size = 15, color = "grey5", margin = margin(b = 15), hjust = .5, family = "Times New Roman", face = "bold"),
+    plot.caption = element_text(color = "black", size = rel(.95), family = "Times New Roman", margin = margin(t = -15, b = 10, r = 10), hjust = 1),
+    legend.position = "top", legend.box.spacing = unit(0.5, "mm"),
+    legend.text = element_text(color = "white", 
+                               size = 13,
+                               face = "bold",
+                               family = "Times New Roman",
+                               margin = margin(b = -40),
+                               vjust = 0.5), 
+    legend.spacing.x = unit(0,"mm")
+  ) 
+
+# Saving the graph--------------------------------------------------------------
+ggsave("./training_folder/2021_w42/2021_w42.png", width = 12.5, height = 15.5, device = "png")
