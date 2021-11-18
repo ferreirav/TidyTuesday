@@ -6,6 +6,14 @@ The weekly data is loaded from [TidyTuesday](https://github.com/rfordatascience/
 
 ---
 
+## 2021 Week 47 - Maps of the city (in a transportatiion or walking perspective)
+
+[Code](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w47/2021_w47_map.R)
+
+![alt text](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w47/fulham_walking_map.png)
+
+---
+
 ## 2021 Week 45 - Most populated cities in the States
 
 [Code](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w45/2021_w45.R)
