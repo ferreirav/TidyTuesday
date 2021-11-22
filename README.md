@@ -14,11 +14,19 @@ The weekly data is loaded from [TidyTuesday](https://github.com/rfordatascience/
 
 ---
 
-## 2021 Week 45 - Most populated cities in the States
+## 2021 Week 45 - Week with elaboration of population densities maps
+
+# Most Populates cities in the U.S.
 
 [Code](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w45/2021_w45.R)
 
 ![alt text](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w45/States_most_populated_cities.png)
+
+# Population Densities in Africa
+
+[Code](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w45/2021_w45_2.R)
+
+![alt text](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w45/africa_densities.png)
 
 ---
 
