@@ -6,6 +6,14 @@ The weekly data is loaded from [TidyTuesday](https://github.com/rfordatascience/
 
 ---
 
+## 2021 Week 48 - Who was best doctor? "Doctor Who" series
+
+[Code](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w48/2021_w48.R)
+
+![alt text](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w48/doctor_who.png)
+
+---
+
 ## 2021 Week 47 - Maps of the city (in a transportatiion or walking perspective)
 
 [Code](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w47/2021_w47_map.R)
