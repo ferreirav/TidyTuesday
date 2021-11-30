@@ -14,11 +14,19 @@ The weekly data is loaded from [TidyTuesday](https://github.com/rfordatascience/
 
 ---
 
-## 2021 Week 47 - Maps of the city (in a transportatiion or walking perspective)
+## 2021 Week 47 - Maps of the city (in a transportation perspective)
+
+### Walking distances
 
 [Code](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w47/2021_w47_map.R)
 
 ![alt text](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w47/fulham_walking_map.png)
+
+### Cycling distances
+
+[Code](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w47/2021_w47_cycle.R)
+
+![alt text](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w47/sw6_cycling_map.png)
 
 ---
 

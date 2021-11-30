@@ -149,7 +149,7 @@ cycling_map <- ggplot() +
                            x = -0.20, y = 51.610, size = 4, hjust = 0.5, colour = colpal[6], family = "mono"),
                   colour = colpal[4], sigma = 10, expand = 7) +
   with_outer_glow(annotate(geom = "text", label = "@Vitor Ferreira | source = © openrouteservice.org by HeiGIT | Map data © OpenStreetMap contributors",
-                           x = -0.20, y = 51.350, size = 3, hjust = 0.5, colour = colpal[6], family = "mono"),
+                           x = -0.20, y = 51.350, size = 2, hjust = 0.5, colour = colpal[6], family = "mono"),
                   colour = colpal[4], sigma = 10, expand = 4) +
   theme_void() + # Ignoring this line we can see the coordinates for rescale the labels
   theme(plot.background = element_rect(fill = "#060606"),
