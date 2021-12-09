@@ -12,6 +12,10 @@ The weekly data is loaded from [TidyTuesday](https://github.com/rfordatascience/
 
 ![alt text](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w48/doctor_who.png)
 
+[Code](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w48/2021_w48_2.R)
+
+![alt text](https://github.com/ferreirav/TidyTuesday/blob/main/training_folder/2021_w48/doctor_who_2.png)
+
 ---
 
 ## 2021 Week 47 - Maps of the city (in a transportation perspective)
