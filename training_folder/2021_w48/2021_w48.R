@@ -66,11 +66,11 @@ pal <- c(
 )
 
 # append images from local
-df$image <- ifelse(df$doctor == "Peter Capaldi", "./training_folder/2021_w48/peter_c.png",
-                   ifelse(df$doctor == "David Tennant", "./training_folder/2021_w48/david_t.png",
-                          ifelse(df$doctor == "Jodie Whittaker", "./training_folder/2021_w48/jodie_w.png",
-                                 ifelse(df$doctor == "Matt Smith", "./training_folder/2021_w48/matt_s.png",
-                                        "./training_folder/2021_w48/chris_e.png"))))
+df$image <- ifelse(df$doctor == "Peter Capaldi", "./training_folder/2021_w48/sourced_images/peter_c.png",
+                   ifelse(df$doctor == "David Tennant", "./training_folder/2021_w48/sourced_images/david_t.png",
+                          ifelse(df$doctor == "Jodie Whittaker", "./training_folder/2021_w48/sourced_images/jodie_w.png",
+                                 ifelse(df$doctor == "Matt Smith", "./training_folder/2021_w48/sourced_images/matt_s.png",
+                                        "./training_folder/2021_w48/sourced_images/chris_e.png"))))
 
 
 # Plotting
